@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        /* Basic Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #e66465, #9198e5);
+            color: white;
+        }
+        header {
+            background: linear-gradient(90deg, #4a90e2, #50a3a2);
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        /* Hamburger Menu Styling */
+        .hamburger {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            cursor: pointer;
+            display: block;
+            width: 30px;
+            height: 25px;
+            z-index: 1000;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .hamburger div {
+            background-color: white;
+            height: 4px;
+            margin: 5px 0;
+            width: 100%;
+            transition: transform 0.3s ease-in-out;
+            background: linear-gradient(135deg, #ecff8b, #e0e78c);
+            
+        }
+
+        /* Animation for active state */
+        .hamburger.active div:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger.active div:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active div:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* Navigation Menu Styling */
+        nav {
+            display: none; /* Initially hidden */
+            background: linear-gradient(135deg, #2712ac, #8795e8);
+            position: absolute;
+            right: 0;
+            top: 60px;
+            width: 200px;
+            z-index: 999;
+            border-radius: 10px;
+
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            padding: 1rem;
+            border-bottom: 1px solid #555;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            color: #f1f1f1;
+        }
+
+        /* Social Media Links Styling */
+        .social-links {
+            margin-top: 1rem;
+            text-align: center;
+        }
+        .social-links a {
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+        }
+        .social-links a:hover {
+            color: #f1f1f1;
+        }
+        .social-links img {
+            width: 40px; /* Adjust size as needed */
+            height: 40px; /* Maintain aspect ratio */
+
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hamburger Menu -->
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <!-- Navigation (Hamburger Menu) -->
+    <nav id="menu">
+        <ul>
+            <li><a href="web.htm">Home</a></li>
+            <li><a href="about.htm">About Us</a></li>
+            <li><a href="contact.htm">Contact Us</a></li>
+            <li><a href="#">Jackets</a></li>
+            <li><a href="#">Shoes</a></li>
+            <li><a href="#">Jeans</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page Header -->
+    <header>
+        <h1>Contact Us</h1>
+    </header>
+
+    <!-- Contact Us Section -->
+    <section style="padding: 2rem; text-align: center;">
+        <h2 style="font-size: 2rem; margin-bottom: 1rem;">Get in Touch</h2>
+        <p style="font-size: 1.2rem; line-height: 1.6; margin-bottom: 2rem;">
+            We would love to hear from you! If you have any questions, comments, or concerns, feel free to reach out to us at:
+        </p>
+        <p style="font-size: 1.2rem; line-height: 1.6; margin-bottom: 2rem;">
+            Email: <a href="mailto:testweb@23gmail.com" style="color: white;">testweb@23gmail.com</a>
+        </p>
+        <div class="social-links">
+            <h3 style="font-size: 1.5rem;">Follow us on:</h3>
+            <a href="https://www.facebook.com" target="_blank">
+                <img src="fb.jpg" alt="Facebook Logo">
+            </a>
+            <a href="https://wa.me/123456789" target="_blank">
+                <img src="wt.jpg" alt="WhatsApp Logo">
+            </a>
+            <a href="https://www.instagram.com" target="_blank">
+                <img src="insta.jpg" alt="Instagram Logo">
+            </a>
+            <a href="https://www.tiktok.com" target="_blank">
+                <img src="tiktok.png" alt="TikTok Logo">
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background-color: #333; padding: 1rem; text-align: center; color: white;">
+        <p>&copy; 2024 Minimalist Store | Designed with simplicity and style in mind</p>
+    </footer>
+
+    <!-- JavaScript to toggle the Hamburger Menu -->
+    <script>
+         function toggleMenu() {
+            const menu = document.getElementById('menu');
+            const hamburger = document.querySelector('.hamburger');
+
+            // Toggle the visibility of the menu
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'block';
+            }
+
+            // Toggle the active class on the hamburger for the animation
+            hamburger.classList.toggle('active');
+        }
+    </script>
+
+    
+    
+
+</body>
+</html>

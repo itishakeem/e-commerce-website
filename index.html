@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimalist E-commerce</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            background: linear-gradient(90deg, #4a90e2, #50a3a2);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+        header h1 {
+            color: white;
+            font-size: 2rem;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Hamburger menu */
+        .hamburger {
+            cursor: pointer;
+            display: block;
+            width: 30px;
+            height: 25px;
+            position: relative;
+            transition: transform 0.3s ease-in-out;
+
+        }
+        .hamburger div {
+            background-color: white;
+            height: 4px;
+            margin: 5px 0;
+            width: 100%;
+            transition: transform 0.3s ease-in-out;
+            background: linear-gradient(135deg, #ecff8b, #e0e78c); /* Pink gradient */
+
+        }
+        .hamburger.active div:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger.active div:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active div:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* Navigation menu */
+        nav {
+            display: none;
+            color: white;
+            position: absolute;
+            right: 0;
+            top: 60px;
+            width: 200px;
+            z-index: 1000;
+            background: linear-gradient(135deg, #2712ac, #8795e8); /* Pink gradient */
+            border-radius: 10px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            padding: 1rem;
+            border-bottom: 1px solid #555;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            color: #f1f1f1;
+        }
+
+        /* Category section */
+        .categories {
+            display: none;
+            background-color: #333;
+            color: white;
+            position: absolute;
+            right: 0;
+            top: 180px;
+            width: 200px;
+            z-index: 1000;
+        }
+        .categories ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .categories ul li {
+            padding: 1rem;
+            border-bottom: 1px solid #555;
+        }
+        .categories ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        .categories ul li a:hover {
+            color: #f1f1f1;
+        }
+
+        .hero {
+    background: linear-gradient(135deg, #dc787b, #f1b7a6); /* Pink gradient */
+    color: white;
+    text-align: center;
+    padding: 5rem;
+    position: relative;
+}
+
+
+        .hero h1 {
+            font-size: 4rem;
+            margin: 0;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+            animation: bounce 2s infinite;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .product {
+            border: 1px solid #ccc;
+            margin: 1rem;
+            padding: 1rem;
+            width: 250px;
+            text-align: center;
+            color: #333;
+            position: relative;
+            overflow: hidden;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            transition: transform 0.3s ease;
+        }
+
+        .product:hover {
+            transform: scale(1.1);
+        }
+
+        .product1 {
+            background-image: url('jacket.jpg');
+            color: white;
+        }
+
+        .product2 {
+            background-image: url('jeans.jpg');
+            color: white;
+        }
+
+        .product3 {
+            background-image: url('shoes.jpg');
+            color: white;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .products {
+                flex-direction: column;
+                align-items: center;
+            }
+            .product {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Minimalist Store</h1>
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <!-- Navigation -->
+    <nav id="menu">
+        <ul>
+            
+        </ul>
+    </nav>
+    <!-- Categories -->
+    <nav id="categories">
+        <ul>
+           <li><a href="web.htm">Home</a></li>
+            <li><a href="about.htm">About Us</a></li>
+            <li><a href="contact.htm">Contact Us</a></li>
+            <li><a href="#">Jackets</a></li>
+            <li><a href="#">Shoes</a></li>
+            <li><a href="#">Jeans</a></li>
+            
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Welcome to Our Store</h1>
+    <p>Find the best products at unbeatable prices!</p>
+</section>
+
+
+<section class="products">
+    <div class="product product1">
+        <h2>Jackets</h2>
+        <p>Price: $40</p>
+        <button>Add to Cart</button>
+    </div>
+    <div class="product product2">
+        <h2>Jeans</h2>
+        <p>Price: $30</p>
+        <button>Add to Cart</button>
+    </div>
+    <div class="product product3">
+        <h2>Shoes</h2>
+        <p>Price: $50</p>
+        <button>Add to Cart</button>
+    </div>
+</section>
+
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background: linear-gradient(135deg, #e66465, #5a60a7); color: white;">
+
+    
+
+    
+    <footer style="background-color: #333; padding: 1rem; text-align: center; color: white;">
+        <p>&copy; 2024 Minimalist Store | Designed with simplicity and style in mind</p>
+    </footer>
+
+</body>
+</html>
+
+
+<footer>
+    <p>&copy; 2024 Minimalist Store</p>
+</footer>
+
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById('menu');
+        const categories = document.getElementById('categories');
+        const hamburger = document.querySelector('.hamburger');
+        
+        if (menu.style.display === 'block') {
+            menu.style.display = 'none';
+            categories.style.display = 'none';
+            hamburger.classList.remove('active');
+        } else {
+            menu.style.display = 'block';
+            categories.style.display = 'block';
+            hamburger.classList.add('active');
+        }
+    }
+</script>
+
+</body>
+</html>

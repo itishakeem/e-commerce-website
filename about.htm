@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        /* Basic Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #e66465, #9198e5);
+            color: white;
+        }
+        header {
+            background: linear-gradient(90deg, #4a90e2, #50a3a2);
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        /* Hamburger Menu Styling */
+        .hamburger {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            cursor: pointer;
+            display: block;
+            width: 30px;
+            height: 25px;
+            z-index: 1000;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .hamburger div {
+            background-color: white;
+            height: 4px;
+            margin: 5px 0;
+            width: 100%;
+            transition: transform 0.3s ease-in-out;
+            background: linear-gradient(135deg, #ecff8b, #e0e78c);
+        }
+
+        /* Animation for active state */
+        .hamburger.active div:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger.active div:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active div:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* Navigation Menu Styling */
+        nav {
+            display: none; /* Initially hidden */
+            background: linear-gradient(135deg, #2712ac, #8795e8);
+            position: absolute;
+            right: 0;
+            top: 60px;
+            width: 200px;
+            z-index: 999;
+            border-radius: 10px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            padding: 1rem;
+            border-bottom: 1px solid #555;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hamburger Menu -->
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <!-- Navigation (Hamburger Menu) -->
+    <nav id="menu">
+        <ul>
+            <!-- Links to the pages -->
+            <li><a href="web.htm">Home</a></li>
+            <li><a href="about.htm">About Us</a></li>
+            <li><a href="contact.htm">Contact Us</a></li>
+            <li><a href="#">Jackets</a></li>
+            <li><a href="#">Shoes</a></li>
+            <li><a href="#">Jeans</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page Header -->
+    <header>
+        <h1>About Us</h1>
+    </header>
+
+    <!-- About Us Section -->
+    <section style="padding: 2rem; text-align: center;">
+        <h2 style="font-size: 2rem; margin-bottom: 1rem;">Welcome to Minimalist Store</h2>
+        <p style="font-size: 1.2rem; line-height: 1.6; margin-bottom: 2rem;">
+            At Minimalist Store, we believe that simplicity is the ultimate sophistication. Our e-commerce platform is dedicated to providing high-quality fashion products that are both stylish and affordable. We pride ourselves on curating a collection of minimalist designs that cater to modern, trend-conscious customers.
+        </p>
+        <p style="font-size: 1.2rem; line-height: 1.6; margin-bottom: 2rem;">
+            Our mission is to deliver the finest jackets, shoes, jeans, and more, ensuring that every customer enjoys a seamless shopping experience. From our user-friendly website to our fast delivery and excellent customer support, we strive to make shopping as easy and enjoyable as possible.
+        </p>
+        <p style="font-size: 1.2rem; line-height: 1.6; margin-bottom: 2rem;">
+            With a passion for quality and a focus on minimalism, we aim to be your go-to destination for all your fashion needs. Thank you for choosing Minimalist Store, where style meets simplicity!
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background-color: #333; padding: 1rem; text-align: center; color: white;">
+        <p>&copy; 2024 Minimalist Store | Designed with simplicity and style in mind</p>
+    </footer>
+
+    <!-- JavaScript to toggle the Hamburger Menu -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            const hamburger = document.querySelector('.hamburger');
+
+            // Toggle the visibility of the menu
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'block';
+            }
+
+            // Toggle the active class on the hamburger for the animation
+            hamburger.classList.toggle('active');
+        }
+   
+
+    </script>
+
+</body>
+</html>
